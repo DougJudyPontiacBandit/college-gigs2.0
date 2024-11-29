@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+#about *{
+    zoom: 91%;
+}
+#about {
+    text-align: center;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(67, 67, 67, 0.75)),
+    url(../components/resources/page_backgrounds/about_wallpaper.jpg);
+    background-size: 150% 150%;
+    background-position: center;
+    animation: gradient 120s ease infinite;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#about_container {
+    width: 100%;
+    min-height: calc(100vh - 140px);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+#about_heading {
+    text-align: center;
+    margin: 50px auto 10px;
+    font-size: 50px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgb(179, 245, 241);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 1440px;
+}
+#about_heading:hover {
+    transition: 0.5s ease;
+    transform: scale(1.02);
+}
+
+#portfolio {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-color: wheat;
+    border-radius: 20px;
+    padding: 60px 40px;
+    max-width: 1440px;
+    margin: 40px auto;
+}
+
+.portrait {
+    width: 280px;
+    height: 280px;
+    margin: auto 20px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.member_container{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 30px;
+}
+
+.member_container:hover{
+    transition: 0.5s ease;
+    transform: scale(1.03);
+}
+
+#vm_section {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    justify-content: space-evenly;
+    margin: 40px auto 120px;
+}
+
+.vm_card {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 20px;
+    padding: 10px 40px;
+}
+
+.vm_card_item {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 40px;
+    border-radius: 20px;
+    background-color: rgb(187, 249, 233);
+    animation: fade-in 1s forwards;
+    border: 2px solid;
+    font-weight: bold;
+}
+
+/*
+h2.vm_card_item {
+    display: none;
+}*/
+p.vm_card_item {
+    display: none;
+}
+
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

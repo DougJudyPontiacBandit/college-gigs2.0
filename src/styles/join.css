@@ -1,0 +1,38 @@
+.join-container{
+    display: flex;
+    flex-direction: column;
+    
+    margin: 150px 300px 70px 300px;
+    gap:90px;
+}
+.join-freelancer{
+    flex: 1;
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 80px;
+    background-color: white;
+    text-align: center;
+}
+.join-freelancer:hover{
+    transition: 0.5s ease;
+    transform: scale(1.02);
+    margin-bottom: 0p;
+}
+.join-employer{
+    flex: 1;
+    padding: 20px;
+    border: 2px solid;
+    background-color: white;
+    border-radius: 80px;
+    text-align: center;
+    
+    
+}
+
+.join-employer:hover{
+    transition: 0.5s ease;
+    transform: scale(1.02);
+    margin-bottom: 0p;
+   
+    
+}

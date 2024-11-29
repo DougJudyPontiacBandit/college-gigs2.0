@@ -1,0 +1,247 @@
+/* body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(255, 242, 228, 0.7), rgba(179, 215, 245, 0.8));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+main {
+  background: linear-gradient(
+    rgba(255, 242, 228, 0.7),
+    rgba(179, 215, 245, 0.8)
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex: 1;
+}
+/* .header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+.logo img {
+  height: 100px;
+  width: 150px;
+  cursor: pointer;
+  margin-left: 50px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.nav-links {
+  width: 100%;
+  padding: 0px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    rgba(164, 255, 250, 0.75),
+    rgba(111, 174, 255, 0.75)
+  );
+}
+
+.nav-links li {
+  list-style: none;
+  display: inline;
+  margin-right: 40px;
+  position: relative;
+  padding: 20px;
+}
+.nav-links li a {
+  font-size: 18px;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+.nav-links ul li::after {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background: #12acff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+header {
+  background-color: #0072c6;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+header {
+  background-color: #137e94;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+header p {
+  font-size: 16px;
+}
+
+/* main {
+  margin-top: 50px;
+} */
+
+/* .container {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1000px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #383838;
+  flex-direction: row-reverse;
+  padding: 30px;
+} */
+
+.preview-container {
+  flex: 1;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  height: auto;
+  width: 100%;
+}
+.preview-container h2 {
+  font-size: 16px;
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.personal-info h2,
+.personal-info p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.personal-info span {
+  flex-grow: 1;
+  border-bottom: 2px solid black;
+  margin-left: 10px;
+}
+.personal-info.preview-container.show-preview span {
+  border-bottom: none;
+}
+.preview h2,
+.preview p {
+  margin: 30px 20px;
+  font-weight: bold;
+}
+
+.preview img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0px 20px;
+  margin-bottom: 50px;
+}
+
+.edit-form {
+  flex: 1;
+  padding: 20px;
+}
+
+.edit-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="email"],
+.edit-form input[type="password"] {
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: calc(100% - 140px);
+}
+
+.edit-form button[type="submit"] {
+  background-color: #0072c6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 20px;
+  width: 80%;
+}
+.edit-form select {
+  padding: 10px;
+  margin: 20px auto;
+  border: 2px solid black;
+  border-radius: 7px;
+  width: 75%;
+  font-family: "Courier New", Courier, monospace;
+}
+.edit-form #myFile {
+  margin-bottom: 20px;
+}
+.course-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.profile-picture {
+  margin-right: 20px;
+}

@@ -1,0 +1,14 @@
+.work_container{
+    display: flex;
+    justify-content: center;
+}
+.work.container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 40px;
+}
+h1{
+    text-align: center;
+    margin: 20px;
+}

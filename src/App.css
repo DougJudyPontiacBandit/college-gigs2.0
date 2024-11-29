@@ -1,0 +1,18 @@
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+.footer{
+  
+  display: flex;
+  flex-direction: column;
+}
+
+

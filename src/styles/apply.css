@@ -1,0 +1,36 @@
+.apply-container{
+    padding: 80px;
+    margin: 60px;
+    border: 2px solid;
+    border-radius: 80px;
+    background: linear-gradient(120deg, rgb(255, 232, 173), rgb(255,255,237), rgb(255, 231, 170));
+}
+.apply-container *{
+    margin: 10px;
+    
+}
+.semi-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -20px;
+}
+.semi-container {
+    flex: 1;
+}
+.children-container{
+    display: flex;
+}
+.children-one, .children-two{
+    display: flex;
+}
+.fa-calendar-alt{
+    display: block;
+}
+.btn{
+    height: 40px;
+    padding: 10px;
+    border-radius: 80px;
+}
+.fake{
+    display: none;
+}
