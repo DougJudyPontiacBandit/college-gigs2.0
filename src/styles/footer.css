@@ -1,61 +1,77 @@
+/* Footer container - stay at the bottom but allow scrolling */
 #footer_container {
     display: flex;
     background-image: linear-gradient(rgba(111, 174, 255, 0.75), rgba(164, 255, 250, 0.75));
     background-color: black;
     justify-content: space-between;
-    position: fixed;
+    position: relative; /* Changed from fixed */
     bottom: 0;
     width: 100%;
     z-index: 2;
+    margin-top: auto; /* Ensures footer is pushed to the bottom when content is short */
 }
-#footer_container *{
+
+/* Styling the elements inside the footer */
+#footer_container * {
     flex: 1;
     font-family: 'Courier New', Courier, monospace;
     font-size: 17px;
-
 }
-.footer-links{
+
+/* Footer link container */
+.footer-links {
     margin: 20px;
     margin-top: 27px;
 }
-.footer-links-link{
+
+/* Footer links section */
+.footer-links-link {
     display: flex;
     gap: 40px;
-    
 }
-.footer-links-link a{
-    flex: 1;
-    width: 10px;
+
+.footer-links-link a {
     text-align: center;
     text-decoration: none;
     color: white;
-    
 }
-.rights-reserved{
+
+/* Center the rights reserved text */
+.rights-reserved {
     padding-top: 25px;
     flex: 2;
     text-align: center;
     color: white;
-    
 }
 
-.social-media{
+/* Social media section styling */
+.social-media {
     padding: 15px;
     padding-left: 70px;
     padding-right: 20px;
     padding-top: 18px;
 }
 
-.social-media-components{
+/* Flex layout for social media icons */
+.social-media-components {
     display: flex;
 }
 
-.sc{
+/* Individual social media icon size */
+.sc {
     width: 30px;
     height: 30px;
-    
 }
-.footer{
+
+/* Remove bottom margin and adjust top positioning */
+.footer {
     margin-bottom: 0px;
-    margin-top: -100px;
+    margin-top: 0px; /* Adjust to align correctly */
+}
+
+/* Adjust the main container content height */
+.main-container {
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
 }

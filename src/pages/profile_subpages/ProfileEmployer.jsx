@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { useSearchParams } from "react-router-dom";  // <-- Add this import
+import { useSearchParams } from "react-router-dom";  
 import { toast } from "react-toastify";
 import { axiosFetch } from "../../utils/axios";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
@@ -7,7 +7,10 @@ import "../../styles/subpage_styles/profile.css";
 
 function ProfileEmployer() {
   const [employer, setEmployer] = useState({});
-  let [searchParams] = useSearchParams();  // <-- Here we use useSearchParams
+  const [rating, setRating] = useState(0);
+  const [review, setReview] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  let [searchParams] = useSearchParams();
   const employer_id = searchParams.get("emp_id");
 
   const getEmployerById = useCallback(async function (id) {
@@ -31,18 +34,21 @@ function ProfileEmployer() {
     }
   }, [employer_id, getEmployerById]);
 
-  // Only update when the employer data changes
-  useEffect(() => {
-    if (employer && employer.emp_id) {
-      // Handle any additional logic here if needed
+  const handleStarClick = (index) => {
+    setRating(index + 1);
+  };
+
+  const handleSubmitReview = () => {
+    if (!rating || !review) {
+      toast.error("Please provide a rating and review.");
+      return;
     }
-  }, [employer]);
+    // Logic to submit the review (e.g., send to API)
+    setSubmitted(true);
+    toast.success("Review submitted successfully.");
+  };
 
-  if (!employer || !employer.emp_id) {
-    return null; // Return nothing if employer is not found
-  }
-
-  // Extract latitude and longitude from the Google Maps link
+  // Google Maps setup
   const googleMapsLinkPattern = /@(-?\d+\.\d+),(-?\d+\.\d+)/;
   const match = employer.emp_address ? employer.emp_address.match(googleMapsLinkPattern) : null;
 
@@ -54,7 +60,6 @@ function ProfileEmployer() {
     center = { lat: -34.397, lng: 150.644 }; // Default fallback coordinates
   }
 
-  // Google Maps setup
   const containerStyle = {
     width: '100%',
     height: '300px'
@@ -66,21 +71,19 @@ function ProfileEmployer() {
         <div className="profile">
           <div className="left-side" id="emp">
             <div className="personal-info">
-              <img src={`http://localhost:6969/${employer.emp_pfp}`} alt="Profile" />
+ <img src={`http://localhost:6969/${employer.emp_pfp}`} alt="Profile" />
               <h2>Hey there! My name is </h2><h1>{employer.emp_name}</h1>
               <p>Contact Me: <b>{employer.emp_email}</b></p>
               <p>I work for: <b>{employer.emp_comp}</b></p>
             </div>
             <div className="map-container">
               <h3>Find Us At</h3>
-              {/* Load Google Maps */}
               <LoadScript googleMapsApiKey={"AlzaSyTNQ-CNk64pkOhrz10duLhmMwH2oyBf6-B"}>
                 <GoogleMap
                   mapContainerStyle={containerStyle}
                   center={center}
                   zoom={10}
                 >
-                  {/* Marker at employer's location */}
                   {match && (
                     <Marker position={center} />
                   )}
@@ -89,7 +92,30 @@ function ProfileEmployer() {
             </div>
           </div>
 
-          {/* Right side content remains unchanged */}
+          <div className="right-side">
+            <h3>Rate and Review</h3>
+            <div className="rating-container">
+              <div className="rating">
+                {[...Array(5)].map((_, index) => (
+                  <label
+                    key={index}
+                    className={`star ${rating > index ? 'filled' : ''}`}
+                    onClick={() => handleStarClick(index)}
+                  ></label>
+                ))}
+              </div>
+              <p>{rating} {rating === 1 ? "star" : "stars"}</p>
+            </div>
+            <textarea
+              placeholder="Write your review..."
+              value={review}
+              onChange={(e) => setReview(e.target.value)}
+              rows="4"
+              cols="50"
+            />
+            <button onClick={handleSubmitReview}>Submit Review</button>
+            {submitted && <p>Your review has been submitted!</p>}
+          </div>
         </div>
       </div>
     </main>
